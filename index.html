@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Actors</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #abe3eb;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .buttons {
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: 2px solid #f0f0ed;
+            background-color: #f576d9;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #333;
+            color: white;
+        }
+
+        .actor-image {
+            margin-top: 20px;
+            display: none;
+        }
+
+        img {
+            max-width: 400px;
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>My Favorite Actors</h1>
+    
+    <div class="buttons">
+        <button onclick="showActor('John')">Dwayne Johnson</button>
+        <button onclick="showActor('Vin')">Vin Diesel</button>
+        <button onclick="showActor('Chris')">Chris Evans</button>
+    </div>
+
+    <div class="actor-image" id="actorImage">
+        <img id="actorPhoto" src="" alt="Actor Image">
+    </div>
+
+    <script>
+        function showActor(actor) {
+            let img = document.getElementById('actorPhoto');
+            let actorImage = document.getElementById('actorImage');
+            
+            if (actor === 'John') {
+                img.src = 'John.jpg';  
+            } else if (actor === 'Vin') {
+                img.src = 'Vin.jpg';  
+            } else if (actor === 'Chris') {
+                img.src = 'Chris.jpg';  
+            }
+
+            actorImage.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
